@@ -1,0 +1,35 @@
+afirmar que::noNA ¿El objeto contiene algún valor faltante? 
+Biobase::anyMissing Comprueba si faltan valores en un objeto o no. 
+nafill Rellenar valores perdidos e1071::imputar Reemplazar valores perdidos 
+forcats::fct_explicit_na Hacer explícitos los valores perdidos 
+generics::interpolate Interpolar valores perdidos 
+ggplot2::remove_missing Función práctica para eliminar valores perdidos de un data.frame 
+gtools::na.replace Reemplazar valores perdidos 
+haven::tagged_na Valores perdidos "etiquetados" 
+haven::zap_empty Convierte cadenas vacías en valores perdidos. 
+lava::Missing Generador de valores perdidos 
+matrixStats::anyMissing Comprueba si hay valores perdidos en un objeto o no 
+matrixStats::signTabulare Calcula el número de valores negativos, cero, positivos y perdidos 
+plotly::group2NA Grupos separados con recetas de valores perdidos
+::check_missing Verificar valores faltantes 
+recetas::step_naomit Eliminar observaciones con valores faltantes 
+rlang::are_na Verificar valores faltantes 
+rlang::missing Valores faltantes 
+rlang::op-na-default Reemplazar valores faltantes 
+stringi::stri_replace_na Reemplazar valores faltantes en un carácter Vector 
+tidyr::drop_na Suelta filas que contienen valores faltantes 
+tidyr::fill Rellena los valores faltantes con el valor anterior o siguiente 
+VIM::VIM-package Visualización e imputación de valores faltantes 
+VIM::chorizonDL C-horizonte de los datos de Kola con valores faltantes 
+VIM::countInf Recuento del número de valores perdidos o infinitos 
+VIM::gapMiss Estadísticas de brechas de valores perdidos 
+VIM::initialise Inicialización de valores perdidos 
+base::droplevels Drop Unused Leve ls de Factors 
+base::factor Factors 
+base::NA 'No disponible' / Valores faltantes 
+rpart::na.rpart Maneja valores faltantes en un objeto Rpart 
+stats::complete.cases Encuentra casos completos 
+stats::na.action NA Estadísticas de acción
+::na.fail Manejar valores faltantes en objetos 
+stats::naresid Ajustar valores faltantes 
+stats::naprint Ajustar valores faltantes

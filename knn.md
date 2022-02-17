@@ -1,0 +1,10 @@
+### 9.5.1 Clasificadores de k-vecino más cercano 
+El método de k-vecino más cercano se describió por primera vez a principios de la década de 1950. El método requiere mucha mano de obra cuando se administran grandes conjuntos de entrenamiento, y no ganó popularidad hasta la década de 1960, cuando se dispuso de una mayor potencia informática. Desde entonces ha sido ampliamente utilizado en el área de reconocimiento de patrones. 
+Los clasificadores de vecinos más cercanos se basan en el aprendizaje por analogía, es decir, comparando una tupla de prueba dada con tuplas de entrenamiento que son similares a ella. Las tuplas de entrenamiento están descritas por n atributos. Cada tupla representa un punto en un espacio n-dimensional. De esta forma, todas las tuplas de entrenamiento se almacenan en un espacio patrón de n dimensiones. Cuando se le da una tupla desconocida, un clasificador de k-vecino más cercano busca en el espacio del patrón las k tuplas de entrenamiento que están más cerca de la tupla desconocida. 
+Estas k tuplas de entrenamiento son los k “vecinos más cercanos” de la tupla desconocida. La “cercanía” se define en términos de una métrica de distancia, como la distancia euclidiana. La distancia euclidiana entre dos puntos o tuplas, digamos, X1 = (x11, x12,..., x1n) y X2 = (x21, x22,..., x2n), es
+
+$dist(X_1,X_2)=sqrt{sum{n}{i=1}pot{x_1i-x_2i}}$
+
+En otras palabras, para cada atributo numérico, tomamos la diferencia entre los valores correspondientes de ese atributo en la tupla X1 y en la tupla X2, elevamos al cuadrado esta diferencia y la acumulamos. La raíz cuadrada se toma del total de la distancia acumulada. Por lo general, normalizamos los valores de cada atributo antes de usar la ecuación. (9.22). Esto ayuda a evitar que los atributos con rangos inicialmente grandes (por ejemplo, ingresos) superen a los atributos con rangos inicialmente más pequeños (por ejemplo, atributos binarios). La normalización min-max, por ejemplo, se puede utilizar para transformar un valor v de un atributo numérico A en v 0 en el rango [0, 1] calculando
+
+

@@ -1,0 +1,30 @@
+---
+title: "practica-iris"
+author: "juan-natello"
+date: "9/2/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+df = pd.read_csv('credit_dataset.csv')
+df.head()
+
+```
+   
+
+```{r iris}
+iris = "~/UNLu/BasedeDatosMasivas/practica-2022/iris.csv"
+summary(iris)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
