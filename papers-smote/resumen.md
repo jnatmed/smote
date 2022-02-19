@@ -15,3 +15,8 @@ orden de lectura
 6) 
 7) 
 
+[pag latex](http://elclubdelautodidacta.es/wp/2011/08/latex-capitulo-10-caracteres-prohibidos/)
+
+[Lista Completa LAtex](https://manualdelatex.com/simbolos)
+
+$$\begin{tabular}{llcr}pepino & tomate & & rabano\\ manzana & naranja & fresa & pera \\ \end{tabular}$$

@@ -19,9 +19,6 @@ Los temas discutidos en la Sección 2 proporcionan la base para la mayoría de l
 En lo que respecta al muestreo sintético, la técnica de sobremuestreo de minorías sintéticas (SMOTE) es un método poderoso que ha demostrado un gran éxito en varias aplicaciones [13]. El algoritmo SMOTE crea datos artificiales basados en las similitudes del espacio de características entre los ejemplos minoritarios existentes. Específicamente, para el subconjunto $S_{min} \in S$, considere los K vecinos más cercanos para cada ejemplo $x_{i} \in S_{min}$, para algún entero K especificado; los K-vecinos más cercanos se definen como los K elementos de $ S_{min}$ cuya distancia euclidiana entre sí mismo y $ x_{i}$ bajo consideración exhibe la magnitud más pequeña a lo largo de las n-dimensiones del espacio de características X. Para crear una muestra sintética, seleccione aleatoriamente uno de los K-más cercanos vecinos, luego multiplique la diferencia del vector de características correspondiente con un número aleatorio entre [0, 1] y, finalmente, agregue este vector a $x_{i}$
 $$x_{new}=x_{i}+(\^x-x_{i}) \hspace{1mm} x \hspace{1mm} \delta$$
 
-[pag latex](http://elclubdelautodidacta.es/wp/2011/08/latex-capitulo-10-caracteres-prohibidos/)
-
-[Lista Completa LAtex](https://manualdelatex.com/simbolos)
 
 [SMOTE, Algoritmo para balanceo de clases en un
 estudio aplicado a la ganadería.](http://sedici.unlp.edu.ar/bitstream/handle/10915/114339/Documento_completo.pdf-PDFA.pdf?sequence=1&isAllowed=y)
