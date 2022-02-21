@@ -9,3 +9,5 @@ No sorprende que la minería de datos, como un tema verdaderamente interdiscipli
 5. Minería de datos (un proceso esencial donde se aplican métodos inteligentes para extraer patrones de datos) 
 6. Evaluación de patrones (para identificar los patrones verdaderamente interesantes que representan el conocimiento basado en medidas de interés; consulte la Sección 1.4.6) 
 7. Presentación del conocimiento (donde se utilizan técnicas de visualización y representación del conocimiento para presentar conocimiento a los usuarios)
+
+![Figura 2](papers-smote\practica-smote\figura2_smote_tomeklinks.jpg)
