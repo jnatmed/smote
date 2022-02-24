@@ -20,3 +20,10 @@ orden de lectura
 [Lista Completa LAtex](https://manualdelatex.com/simbolos)
 
 $$\begin{tabular}{llcr}pepino & tomate & & rabano\\ manzana & naranja & fresa & pera \\ \end{tabular}$$
+
+[web - Inbalanced learning](https://imbalanced-learn.org/dev/auto_examples/combine/plot_comparison_combine.html#sphx-glr-auto-examples-combine-plot-comparison-combine-py)
+
+[web - towardsdatascience.com smote tomek links](https://towardsdatascience.com/imbalanced-classification-in-python-smote-tomek-links-method-6e48dfe69bbc)
+muestra una libreria que puede generar un conjunto de datos sinteticos para hacer la experiencia. 
+
+[fuente de donde sacar datasets](https://www.jair.org/index.php/jair/article/view/10302/24590)
