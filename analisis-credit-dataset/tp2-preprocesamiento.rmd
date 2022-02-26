@@ -1,0 +1,152 @@
+---
+title: "TRABAJO FINAL (Etapa 1): Preprocesamiento de datos -Análisis, Limpieza, Transformación e Integración-"
+author: "Juan-Natello"
+date: "24/02/2022"
+output: html_document
+---
+### El proceso KDD
+
+**El proceso KDD** es interactivo e iterativo, involucra numerosos pasos con muchas decisiones tomadas por el usuario. Aquí, describimos en términos generales algunos de sus pasos básicos: 
+- **El Primero**, desarrollar una comprensión del dominio de la aplicación y el conocimiento previo relevante e identificar el objetivo del proceso KDD desde el punto de vista del cliente. 
+- **El segundo** es crear un conjunto de datos de destino: seleccionar un conjunto de datos o centrarse en un subconjunto de variables o muestras de datos, en el que se realizará el descubrimiento. 
+- **El tercero** es la limpieza y el preprocesamiento de datos. Las operaciones básicas incluyen eliminar el ruido si corresponde, recopilar la información necesaria para modelar o dar cuenta del ruido, decidir sobre estrategias para manejar los campos de datos faltantes y dar cuenta de la información de secuencia de tiempo y los cambios conocidos. 
+- **El cuarto** es la reducción y proyección de datos: encontrar características útiles para representar los datos según el objetivo de la tarea. Con los métodos de transformación o reducción de dimensionalidad, se puede reducir el número efectivo de variables bajo consideración, o se pueden encontrar representaciones invariantes para los datos. 
+- **El quinto** es hacer coincidir los objetivos del proceso KDD (paso 1) con un método de minería de datos en particular. Por ejemplo, el resumen, la clasificación, la regresión, el agrupamiento, etc., se describen más adelante, así como en Fayyad, Piatetsky-Shapiro y Smyth (1996). 
+- **El sexto** es el análisis exploratorio y la selección de modelos e hipótesis: elegir los algoritmos de extracción de datos y seleccionar los métodos que se utilizarán para buscar patrones de datos. Este proceso incluye decidir qué modelos y parámetros pueden ser apropiados (por ejemplo, los modelos de datos categóricos son diferentes a los modelos de vectores sobre los reales) y hacer coincidir un método de minería de datos particular con los criterios generales del proceso KDD (por ejemplo, el usuario final podría estar más interesado en comprender el modelo que en sus capacidades predictivas). 
+- **El séptimo** es la minería de datos: la búsqueda de patrones de interés en una forma de representación particular o en un conjunto de tales representaciones, incluidas las reglas de clasificación o los árboles, la regresión y la agrupación. El usuario puede ayudar significativamente al método de minería de datos realizando correctamente los pasos anteriores. 
+- **El octavo** es interpretar patrones extraídos, posiblemente volviendo a cualquiera de los pasos 1 a 7 para una mayor iteración. Este paso también puede implicar la visualización de los patrones y modelos extraídos o la visualización de los datos dados los modelos extraídos. 
+- **El noveno** es actuar sobre el conocimiento descubierto: usar el conocimiento directamente, incorporar el conocimiento en otro sistema para una acción posterior, o simplemente documentarlo e informarlo a las partes interesadas. Este proceso también incluye verificar y resolver posibles conflictos con el conocimiento previamente creído (o extraído). El proceso KDD puede implicar una iteración significativa y puede contener bucles entre dos pasos cualesquiera.
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(readr)
+library(gplots)
+library(RColorBrewer)
+library(plotrix)
+
+credit_dataset <- read_csv("~/UNLu/BasedeDatosMasivas/smote/analisis-credit-dataset/credit_dataset.csv")
+
+```
+
+```{r}
+summary(credit_dataset)
+```
+## Analisis de Datos Faltantes
+
+```{r}
+cant_falta_X1 <- sum(is.na(credit_dataset$X1))
+cant_falta_ID <- sum(is.na(credit_dataset$ID))
+cant_falta_GENDER <- sum(is.na(credit_dataset$GENDER))
+cant_falta_CAR <- sum(is.na(credit_dataset$CAR))
+cant_falta_REALITY <- sum(is.na(credit_dataset$REALITY))
+cant_falta_NO_OF_CHILD <- sum(is.na(credit_dataset$NO_OF_CHILD))
+cant_falta_INCOME <- sum(is.na(credit_dataset$INCOME))
+cant_falta_INCOME_TYPE <- sum(is.na(credit_dataset$INCOME_TYPE))
+cant_falta_EDUCATION_TYPE <- sum(is.na(credit_dataset$EDUCATION_TYPE))
+cant_falta_FAMILY_TYPE <- sum(is.na(credit_dataset$FAMILY_TYPE))
+cant_falta_HOUSE_TYPE <- sum(is.na(credit_dataset$HOUSE_TYPE))
+cant_falta_FLAG_MOBIL <- sum(is.na(credit_dataset$FLAG_MOBIL))
+cant_falta_WORK_PHONE <- sum(is.na(credit_dataset$WORK_PHONE))
+cant_falta_PHONE <- sum(is.na(credit_dataset$PHONE))
+cant_falta_E_MAIL <- sum(is.na(credit_dataset$E_MAIL))
+cant_falta_FAMILY_SIZE <- sum(is.na(credit_dataset$`FAMILY SIZE`))
+cant_falta_BEGIN_MONTH <- sum(is.na(credit_dataset$BEGIN_MONTH))
+cant_falta_AGE <- sum(is.na(credit_dataset$AGE))
+cant_falta_YEAR_EMPLOYED <- sum(is.na(credit_dataset$YEARS_EMPLOYED))
+cant_falta_TARGET <- sum(is.na(credit_dataset$TARGET))
+print(paste("1) cantidad de faltantes (X1): ",cant_falta_X1 ))
+print(paste("2) cantidad de faltantes (ID): ",cant_falta_ID ))
+print(paste("3) cantidad de faltantes (GENDER): ",cant_falta_GENDER ))
+print(paste("4) cantidad de faltantes (CAR): ",cant_falta_CAR ))
+print(paste("5) cantidad de faltantes (REALITY): ",cant_falta_REALITY ))
+print(paste("6) cantidad de faltantes (NO OF CHILD): ",cant_falta_NO_OF_CHILD ))
+print(paste("7) cantidad de faltantes (INCOME): ",cant_falta_INCOME ))
+print(paste("8) cantidad de faltantes (INCOME_TYPE): ",cant_falta_INCOME_TYPE ))
+print(paste("9) cantidad de faltantes (EDUCATION_TYPE): ",cant_falta_EDUCATION_TYPE ))
+print(paste("10) cantidad de faltantes (FAMILY_TYPE): ",cant_falta_FAMILY_TYPE ))
+print(paste("11) cantidad de faltantes (HOUSE_TYPE): ",cant_falta_HOUSE_TYPE ))
+print(paste("12) cantidad de faltantes (FLAG_MOBIL): ",cant_falta_FLAG_MOBIL ))
+print(paste("13) cantidad de faltantes (WORK_PHONE): ",cant_falta_WORK_PHONE ))
+print(paste("14) cantidad de faltantes (PHONE): ",cant_falta_PHONE ))
+print(paste("15) cantidad de faltantes (E_MAIL): ",cant_falta_E_MAIL))
+print(paste("16) cantidad de faltantes (FAMILY_SIZE): ",cant_falta_FAMILY_SIZE ))
+print(paste("17) cantidad de faltantes (BEGIN_MONTH): ",cant_falta_BEGIN_MONTH ))
+print(paste("18) cantidad de faltantes (AGE): ",cant_falta_AGE ))
+print(paste("19) cantidad de faltantes (YEAR_EMPLOYED): ",cant_falta_YEAR_EMPLOYED ))
+print(paste("20) cantidad de faltantes (TARGET): ",cant_falta_TARGET ))
+
+```
+
+Uso grafico de tortas https://r-coder.com/grafico-sectores-r/
+Uso de grafico de barras https://bookdown.org/jboscomendoza/r-principiantes4/graficas-de-barras.html
+Uso de Funciones https://bookdown.org/jboscomendoza/r-principiantes4/nuestra-primera-funcion.html
+Uso de graficos en R https://www.r-graph-gallery.com/37-barplot-with-number-of-observation.html 
+
+```{r}
+color <- topo.colors(5)
+
+dibujar_grafico_barras <- function(datos, titulo) {
+
+  barplot(datos, main = paste("Grafico de barras de la variable", titulo), xlab = "Fraude tarjeta de Credito (0 = normal, 1 = fraude)", ylab = "Numero de Transacciones", xlim=c(0,4), ylim=c(0,25400), col = color, density = 50)
+  legend("topright", legend = c(paste("Normal : ", normal), paste("Fraude : ", fraude)),
+       fill =  color, density = 50)
+  text(datos, paste("N = ", datos, sep="") ,cex=1)
+
+}
+
+dibujar_grafico_tortas <- function(datos, titulo) {
+
+  pie(datos, labels = datos, density = 50, col = color, main = paste("Grafico de torta de la variable", titulo))
+legend("topleft", legend = c(paste("Normal : ", normal), paste("Fraude : ", fraude)),
+       fill =  color, density = 50)
+  
+}
+
+
+normal <- sum(credit_dataset$TARGET == 0)
+fraude <- sum(credit_dataset$TARGET == 1)
+datos_fraude <- c(normal, fraude)
+
+dibujar_grafico_barras(datos_fraude, "TARGET")
+dibujar_grafico_tortas(datos_fraude, "TARGET")
+
+
+```
+DETECCION DE OUTLIERS
+```{r}
+boxplot(credit_dataset$ID, main = 'ID')
+boxplot(credit_dataset$NO_OF_CHILD, main = 'NO_OF_CHILD')
+boxplot(credit_dataset$INCOME, main = 'INCOME')
+boxplot(credit_dataset$FLAG_MOBIL, main = 'FLAG_MOVIL')
+boxplot(credit_dataset$WORK_PHONE, main = 'WORK_PHONE')
+boxplot(credit_dataset$`FAMILY SIZE`, main = 'FAMILY_SIZE')
+boxplot(credit_dataset$BEGIN_MONTH, main = 'BEGIN_MONTH')
+boxplot(credit_dataset$AGE, main = 'AGE')
+boxplot(credit_dataset$YEARS_EMPLOYED, main = 'YEARS_EMPLOYED')
+boxplot(credit_dataset$TARGET, main = 'TARGET')
+
+
+```
+```{r}
+with(credit_dataset,
+  {
+   print(table(TARGET));
+   print(table(INCOME));
+   print(table(AGE));
+   print(table(YEARS_EMPLOYED));
+  
+})
+
+
+```
+
+```{r}
+```
+
+```{r}
+```
+
+```{r}
+```

@@ -17,6 +17,8 @@ orden de lectura
 
 [pag latex](http://elclubdelautodidacta.es/wp/2011/08/latex-capitulo-10-caracteres-prohibidos/)
 
+[pag latex subindice y superindices](http://elclubdelautodidacta.es/wp/2012/04/latex-capitulo-24-subindices-y-superindices/)
+
 [Lista Completa LAtex](https://manualdelatex.com/simbolos)
 
 $$\begin{tabular}{llcr}pepino & tomate & & rabano\\ manzana & naranja & fresa & pera \\ \end{tabular}$$
